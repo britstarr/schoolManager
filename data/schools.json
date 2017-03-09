@@ -1,0 +1,142 @@
+[
+ {
+   "ID": 1,
+   "Name": "Avon Elementary School",
+   "County": "District of Columbia",
+   "Students": 1973,
+   "Grades": "1-5"
+ },
+ {
+   "ID": 2,
+   "Name": "Britten High School",
+   "County": "District of Columbia",
+   "Students": 17,
+   "Grades": "9-12"
+ },
+ {
+   "ID": 3,
+   "Name": "Coolidge Middle School",
+   "County": "District of Columbia",
+   "Students": 823,
+   "Grades": "6-8"
+ },
+ {
+   "ID": 4,
+   "Name": "Darling Academy",
+   "County": "Middlewood",
+   "Students": 235,
+   "Grades": "K-12"
+ },
+ {
+   "ID": 5,
+   "Name": "Elk Ridge School",
+   "County": "Middlewood",
+   "Students": 21436,
+   "Grades": "K-12"
+ },
+ {
+   "ID": 6,
+   "Name": "Friar Tuck Magnet School",
+   "County": "Bell",
+   "Students": 25,
+   "Grades": "K-8"
+ },
+ {
+   "ID": 7,
+   "Name": "Garrison Elementary School",
+   "County": "Tift",
+   "Students": 999,
+   "Grades": "K-5"
+ },
+ {
+   "ID": 8,
+   "Name": "Harvard Prep",
+   "County": "Cork",
+   "Students": 100,
+   "Grades": "8-12"
+ },
+ {
+   "ID": 9,
+   "Name": "Ingleside Academy",
+   "County": "Cork",
+   "Students": 99,
+   "Grades": "6-12"
+ },
+ {
+   "ID": 10,
+   "Name": "Jefferson High School",
+   "County": "Flatbush",
+   "Students": 237,
+   "Grades": "9-12"
+ },
+ {
+   "ID": 11,
+   "Name": "Kilbourne Junior High",
+   "County": "Flatbush",
+   "Students": 123,
+   "Grades": "6-9"
+ },
+ {
+   "ID": 12,
+   "Name": "Lamont Prep",
+   "County": "Flatbush",
+   "Students": 123,
+   "Grades": "9-12"
+ },
+ {
+   "ID": 13,
+   "Name": "Mt Ranier Montessori",
+   "County": "Alexandria",
+   "Students": 897,
+   "Grades": "K"
+ },
+ {
+   "ID": 14,
+   "Name": "North Pole Middle School",
+   "County": "Alexandria",
+   "Students": 400,
+   "Grades": "6-8"
+ },
+ {
+   "ID": 15,
+   "Name": "Oxbridge Elementary",
+   "County": "Alexandria",
+   "Students": 234,
+   "Grades": "1-5"
+ },
+ {
+   "ID": 16,
+   "Name": "Pringle Middle School",
+   "County": "Alexandria",
+   "Students": 351,
+   "Grades": "6-8"
+ },
+ {
+   "ID": 17,
+   "Name": "Quincy Polytech",
+   "County": "Farmer",
+   "Students": 1897,
+   "Grades": "9-12"
+ },
+ {
+   "ID": 18,
+   "Name": "Rodgers Mill Magnet",
+   "County": "Farmer",
+   "Students": 2000,
+   "Grades": "9-12"
+ },
+ {
+   "ID": 19,
+   "Name": "Salford Prep",
+   "County": "Idlewild",
+   "Students": 1,
+   "Grades": "9-12"
+ },
+ {
+   "ID": 20,
+   "Name": "Trunxton High",
+   "County": "Idlewild",
+   "Students": 230,
+   "Grades": "9-12"
+ }
+]
