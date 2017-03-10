@@ -1,8 +1,16 @@
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 var routes = require('./controllers/index.js');
-var router = require('express').Router();
+var router = express.Router();
+var path = require('path');
+
+app.use(express.static('public'));
+// app.use('*', router);
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../public/index.html'));
+});
 
 app.get('/data', function(req, res) {
   routes.get(req, res);
@@ -16,10 +24,9 @@ app.put('/data', function(req, res) {
   routes.put(req, res);
 });
 
-app.use(express.static('public'));
-
-app.use('/', router);
-
 app.listen(port, function() {
   console.log(`App is running on port ${port}`);
 });
+
+module.exports.app = app;
+module.exports = router;
