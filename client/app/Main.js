@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
+import { Panel } from 'react-bootstrap';
 
 export default class Main extends Component {
   render() {
     return (
       <div>
-        <h1>AYYYYYYYYY</h1>
+        <Panel className="panel">
+          <h1>Main</h1>
+        </Panel>
       </div>
     );
   }
