@@ -9,20 +9,21 @@ const Row = ({ id, county, name, students, grades }) => {
       <td data-label="Students">{students}</td>
       <td data-label="Grades">{grades}</td>
       <td>
-        <button onClick={function(){
-          return (
-            <Edit id={id} county={county} name={name} students={students} grades={grades} />
-          )
-        }}> Edit
-        </button>
+        <Link to={{
+          pathname: '/edit',
+          state: {
+            school: id
+          }
+        }}>
+          Edit
+        </Link>
       </td>
       <td>
-        <button onClick={function(){
-          return (
-            <Edit id={id} county={county} name={name} students={students} grades={grades} />
-          )
-        }}> Delete
-        </button>
+        <Link to={{
+
+        }}>
+          Delete
+        </Link>
       </td>
     </tr>
   )
