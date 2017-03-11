@@ -8,19 +8,48 @@ export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      schools: []
+      schools: [],
+      search: '',
+      filteredSchools: []
     }
   }
 
   componentDidMount() {
     this.setState({
-      schools: data
+      schools: data,
+      filteredSchools: data
     });
   }
 
-  handleChange(prop, input) {
+  handleChange(property, input) {
+    //if value in the search bar, update state & filter
+    input.target.value ?
+      this.setState({
+        [property]: input.target.value
+      }, () => {
+        this.filterSchools();
+      }) : //else display the full list
+        this.setState({
+          filteredSchools: this.state.schools
+        })
+
+  }
+
+  filterSchools() {
+    let filteredSchools = [];
+    let search = this.state.search;
+
+    this.state.schools.forEach((school) => {
+        for (var key in school) {
+          if (school[key].toString().toLowerCase().indexOf(search) >= 0) {
+            filteredSchools.push(school);
+          }
+        }
+      }
+    );
+
     this.setState({
-      [prop]: input.target.value
+      filteredSchools: filteredSchools
     });
   }
 
@@ -29,7 +58,7 @@ export default class Main extends Component {
       <div>
         <div className="admin">
           <Link to="/create" className="create">Add New School</Link>
-          <input className="search" type="text" placeholder="Search"/>
+          <input className="search" type="text" placeholder="Search" onChange={this.handleChange.bind(this, 'search')}/>
         </div>
         <table>
           <thead>
@@ -44,7 +73,7 @@ export default class Main extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.schools.map((school, i) => (
+            {this.state.filteredSchools.map((school, i) => (
               <Row
                 index={i}
                 id={school.ID}

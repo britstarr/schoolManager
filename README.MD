@@ -1,8 +1,7 @@
 ## Requirements
-  - MySQL
-  - Node 6.9.1
-  - React 15.4.1
-  - Express 4.14.0
+  - Node 6.9.1+
+
+## Dependencies
 
 ## Running the app
   ```sh
