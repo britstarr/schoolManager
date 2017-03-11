@@ -22,6 +22,7 @@ export default class Main extends Component {
         <table>
           <thead>
             <tr>
+              <th>ID</th>
               <th>County</th>
               <th>Name</th>
               <th>Students</th>
@@ -31,9 +32,10 @@ export default class Main extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.schools.map((school, id) => (
+            {this.state.schools.map((school, i) => (
               <Row
-                id={id}
+                index={i}
+                id={school.ID}
                 county={school.County}
                 name={school.Name}
                 students={school.Students}

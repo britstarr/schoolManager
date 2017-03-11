@@ -66,3 +66,8 @@ table th {
     font-weight: bold;
   }
 }
+
+form {
+  width: 80%;
+  margin: 50px auto;
+}

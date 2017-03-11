@@ -1,71 +1,102 @@
-import React, {Component} from 'react';
-import { FormGroup, FormControl, Button} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { FormGroup, FormControl, Button, ControlLabel} from 'react-bootstrap';
+import data from '../../data/schools.json';
+import { browserHistory } from 'react-router';
 
 export default class Edit extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      name: '',
-      county: '',
-      students: '',
-      grades: ''
+      index: this.props.location.state.index,
+      id: this.props.location.state.id,
+      name: this.props.location.state.name,
+      county: this.props.location.state.county,
+      students: this.props.location.state.students,
+      grades: this.props.location.state.grades
     }
   }
 
   componentDidMount() {
-    console.log("propsssss", this.props)
+    // console.log('STATE', this.state)
+  }
+
+  handleChange(prop, input) {
+    this.setState({
+      [prop]: input.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    var update = {
+      ID: this.state.id,
+      Name: this.state.name,
+      County: this.state.county,
+      Students: this.state.students,
+      Grades: this.state.grades
+    }
+
+    data[this.state.index] = update;
+    browserHistory.push('/');
+    /*
+      //get last ID currently in list and add 1 to it
+      var len = data.length - 1;
+      var newIndex = data[len].ID + 1;
+
+      var newSchool = {
+        ID: newIndex,
+        Name: this.state.name,
+        County: this.state.county,
+        Students: this.state.students,
+        Grades: this.state.grades
+      }
+
+      //pushing temp data to avoid db calls
+      data.push(newSchool);
+      console.log(data);
+    */
   }
 
   render() {
     return (
       <div>
         <form>
+          <h1>Editing {this.props.location.state.name}</h1>
           <FormGroup
-            controlId="addSchool"
           >
             <ControlLabel>Name</ControlLabel>
             <FormControl
+              id="name"
               type="text"
-              value={this.state.name}
-              placeholder="Enter text"
-              onChange={this.handleChange}
+              defaultValue={this.state.name}
+              onChange={this.handleChange.bind(this, 'name')}
             />
             <ControlLabel>County</ControlLabel>
             <FormControl
+              id="county"
               type="text"
-              value={this.state.county}
-              placeholder="Enter text"
-              onChange={this.handleChange}
+              defaultValue={this.state.county}
+              onChange={this.handleChange.bind(this, 'county')}
             />
             <ControlLabel>Students</ControlLabel>
             <FormControl
+              id="students"
               type="text"
-              value={this.state.students}
-              placeholder="Enter text"
-              onChange={this.handleChange}
+              defaultValue={this.state.students}
+              onChange={this.handleChange.bind(this, 'students')}
             />
             <ControlLabel>Grades</ControlLabel>
             <FormControl
+              id="grades"
               type="text"
-              value={this.state.grades}
-              placeholder="Enter text"
-              onChange={this.handleChange}
+              defaultValue={this.state.grades}
+              onChange={this.handleChange.bind(this, 'grades')}
             />
           </FormGroup>
-          <Button>Update</Button>
+          <Button onClick={this.handleSubmit.bind(this)}>Update</Button>
         </form>
       </div>
     )
   }
 }
-
-// const Edit = ({ id, county, name, students, grades }) => {
-  // console.log(id, county, name)
-  // return (
-  //   <div>
-  //     {name}
-  //   </div>
-  // )
-// };
-
-// export default Edit;
