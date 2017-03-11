@@ -8,13 +8,14 @@ export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      schools: [],
+      schools: [], //all schools
       search: '',
-      filteredSchools: []
+      filteredSchools: [] //those matching search
     }
   }
 
   componentDidMount() {
+    //on load schools & filteredSchools are both the full list
     this.setState({
       schools: data,
       filteredSchools: data
@@ -28,14 +29,14 @@ export default class Main extends Component {
         [property]: input.target.value
       }, () => {
         this.filterSchools();
-      }) : //else display the full list
+      }) : //else, search is empty, display the full list
         this.setState({
           filteredSchools: this.state.schools
-        })
-
+        });
   }
 
   filterSchools() {
+    //when called, filter the schools based on the search state
     let filteredSchools = [];
     let search = this.state.search;
 

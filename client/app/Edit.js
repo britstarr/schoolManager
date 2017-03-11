@@ -16,15 +16,16 @@ export default class Edit extends Component {
     }
   }
 
-  handleChange(prop, input) {
+  handleChange(property, input) {
     this.setState({
-      [prop]: input.target.value
+      [property]: input.target.value
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
+    //pushing state/data updates for temporary data updates
     var update = {
       ID: this.state.id,
       Name: this.state.name,
