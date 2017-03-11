@@ -33,7 +33,7 @@ const Row = ({ index, id, county, name, students, grades }) => {
             name: name
           }
         }}>
-          Edit
+          Delete
         </Link>
       </td>
     </tr>

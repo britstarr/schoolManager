@@ -4,6 +4,7 @@ import Main from './Main.js';
 import Home from './Home.js';
 import Edit from './Edit.js';
 import Delete from './Delete.js';
+import Create from './Create.js';
 
 export default class App extends Component {
   render() {
@@ -12,6 +13,7 @@ export default class App extends Component {
         <Route path="/" component={Main} />
         <Route path="/edit" component={Edit} />
         <Route path="/delete" component={Delete} />
+        <Route path="/create" component={Create} />
       </Router>
     );
   }

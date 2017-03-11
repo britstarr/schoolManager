@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, FormControl, Button, ControlLabel} from 'react-bootstrap';
+import { FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import data from '../../data/schools.json';
 import { browserHistory } from 'react-router';
 
@@ -14,10 +14,6 @@ export default class Edit extends Component {
       students: this.props.location.state.students,
       grades: this.props.location.state.grades
     }
-  }
-
-  componentDidMount() {
-    // console.log('STATE', this.state)
   }
 
   handleChange(prop, input) {
@@ -39,23 +35,6 @@ export default class Edit extends Component {
 
     data[this.state.index] = update;
     browserHistory.push('/');
-    /*
-      //get last ID currently in list and add 1 to it
-      var len = data.length - 1;
-      var newIndex = data[len].ID + 1;
-
-      var newSchool = {
-        ID: newIndex,
-        Name: this.state.name,
-        County: this.state.county,
-        Students: this.state.students,
-        Grades: this.state.grades
-      }
-
-      //pushing temp data to avoid db calls
-      data.push(newSchool);
-      console.log(data);
-    */
   }
 
   render() {
@@ -63,8 +42,7 @@ export default class Edit extends Component {
       <div>
         <form>
           <h1>Editing {this.props.location.state.name}</h1>
-          <FormGroup
-          >
+          <FormGroup>
             <ControlLabel>Name</ControlLabel>
             <FormControl
               id="name"
